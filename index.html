@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .field-group {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 4px;
+            width: fit-content;
+        }
+    </style>
+    <script>
+        function createFields() {
+            const container = document.createElement('div')
+            container.className = 'field-group'
+            container.style.marginTop = '1rem'
+
+            const name = document.createElement('input')
+            name.placeholder = 'Name'
+            name.style.width = '75px'
+
+            const surname = document.createElement('input')
+            surname.placeholder = 'Surname'
+            surname.style.width = '125px'
+            surname.style.marginLeft = '0.5rem'
+
+            const deleteButton = document.createElement('button')
+            deleteButton.textContent = 'Delete'
+            deleteButton.style.marginLeft = '0.5rem'
+            deleteButton.onclick = function() {
+                container.remove()
+            }
+
+            const separator1 = document.createElement('br')
+            
+            const phone = document.createElement('input')
+            phone.placeholder = 'Phone'
+            phone.style.maxWidth = '215px'
+            phone.style.width = '100%'
+            phone.style.marginTop = '0.5rem'
+
+
+
+            document.getElementById('fields-container').appendChild(container)
+            container.appendChild(name)
+            container.appendChild(surname)
+            container.appendChild(deleteButton)
+            container.appendChild(separator1)
+            container.appendChild(phone)
+        }
+
+        function deleteFields() {
+            const container = document.getElementById('fields-container')
+
+            container.innerHTML = ''
+        }
+    </script>
+    <title>Fields - BDeLa23</title>
+</head>
+<body>
+    <button onclick="createFields()">Create a group of fields</button>
+    <button onclick="deleteFields()">Delete fields</button>
+
+    <div id="fields-container"></div>
+</body>
+</html>
