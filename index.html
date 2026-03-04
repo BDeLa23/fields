@@ -10,6 +10,10 @@
             border-radius: 4px;
             width: fit-content;
         }
+
+        button {
+            cursor: pointer;
+        }
     </style>
     <script>
         function createFields() {
@@ -40,7 +44,7 @@
             phone.style.maxWidth = '215px'
             phone.style.width = '100%'
             phone.style.marginTop = '0.5rem'
-
+            phone.maxLength = '9'
 
 
             document.getElementById('fields-container').appendChild(container)
